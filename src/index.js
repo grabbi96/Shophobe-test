@@ -3,8 +3,45 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import store from "./store/Store"
+import { Provider } from "react-redux"
+import { setUser } from "./store/action/userAction"
+import admin from "./components/base"
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+
+
+
+
+
+
+
+
+
+if (localStorage.getItem('userToken')) {
+    store.dispatch(setUser({ name: "user" }))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+    ,
+
+    document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
