@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Redirect, Route } from 'react-router-dom';
 
-
+// user private route
 export const UserPrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={props =>
         localStorage.getItem('userToken') ? (
@@ -20,6 +20,7 @@ export const UserPrivateRoute = ({ component: Component, ...rest }) => (
     />
 )
 
+// user route
 export const UserRoute = ({ component: Component, ...rest }) => (
     <Route {...rest} render={props =>
         localStorage.getItem('userToken') ? (

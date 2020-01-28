@@ -6,7 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import store from "./store/Store"
 import { Provider } from "react-redux"
 import { setUser } from "./store/action/userAction"
-import admin from "./components/base"
 
 
 
@@ -21,16 +20,6 @@ import admin from "./components/base"
 if (localStorage.getItem('userToken')) {
     store.dispatch(setUser({ name: "user" }))
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
